@@ -1,0 +1,46 @@
+# Godot-specific
+.import/
+export.cfg
+export_presets.cfg
+
+# Editor-specific
+*.godot
+*.mono/
+*.log
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+
+# Mono (C#) support
+.mono/
+data_*/  # Mono build folders
+*.csproj
+*.sln
+*.user
+*.pidb
+*.mdb
+
+# VSCode
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Backup files
+*.backup
+*.old
+*.orig
+
+# Godot 4 generated folders
+.godot/
