@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://dhx2yn5hq1ppq"]
+[gd_scene load_steps=53 format=3 uid="uid://dhx2yn5hq1ppq"]
 
 [ext_resource type="Texture2D" uid="uid://5uaggn5p7a50" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://bqw3l6vhct3ne" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://b7m4l8hyktrfa" path="res://shadows/medium_shadow.png" id="3_g1dw6"]
 
 [sub_resource type="Animation" id="Animation_g1dw6"]
 length = 0.001
@@ -464,8 +465,14 @@ motion_mode = 1
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
 texture = ExtResource("1_oul6g")
 hframes = 60
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 2)
+texture = ExtResource("3_g1dw6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -478,5 +485,14 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/StateMachine/AttackState/blend_position = Vector2(-0.09201521, -0.52735233)
 parameters/StateMachine/MoveState/RunState/blend_position = Vector2(-0.1919927, 0.3183856)
-parameters/StateMachine/MoveState/StandState/blend_position = Vector2(0.17197454, 0.1748879)
+parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.01000911, 0.72197306)
 parameters/StateMachine/RollState/blend_position = Vector2(-0.74600756, 0.013698578)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -9)
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -9)
+polygon = PackedVector2Array(0, 0, 5, 6, 0, 13, -5, 6)
