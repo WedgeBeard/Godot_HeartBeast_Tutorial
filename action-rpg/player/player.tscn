@@ -332,11 +332,11 @@ animation = &"attack_down"
 blend_point_0/node = SubResource("AnimationNodeAnimation_wodsf")
 blend_point_0/pos = Vector2(-0.90000004, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_65viv")
-blend_point_1/pos = Vector2(0, 1)
+blend_point_1/pos = Vector2(0, -1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_x7c3f")
 blend_point_2/pos = Vector2(0.90000004, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_bjvpn")
-blend_point_3/pos = Vector2(0, -1)
+blend_point_3/pos = Vector2(0, 1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ieo8"]
@@ -353,11 +353,11 @@ animation = &"run_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_wodsf"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_2ieo8")
-blend_point_0/pos = Vector2(0, 1)
+blend_point_0/pos = Vector2(0, -1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_ebec5")
 blend_point_1/pos = Vector2(0.90000004, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_yllr7")
-blend_point_2/pos = Vector2(0, -1)
+blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_kb6p2")
 blend_point_3/pos = Vector2(-0.90000004, 0)
 blend_mode = 1
@@ -378,20 +378,22 @@ animation = &"stand_down"
 blend_point_0/node = SubResource("AnimationNodeAnimation_32hag")
 blend_point_0/pos = Vector2(-0.90000004, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_tqiix")
-blend_point_1/pos = Vector2(0, 1)
+blend_point_1/pos = Vector2(0, -1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_e7oew")
 blend_point_2/pos = Vector2(0.90000004, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_c35mf")
-blend_point_3/pos = Vector2(0, -1)
+blend_point_3/pos = Vector2(0, 1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x7c3f"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s7qer"]
+advance_mode = 2
 advance_expression = "input_vector.length() == 0.0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bjvpn"]
+advance_mode = 2
 advance_expression = "input_vector.length() > 0.0"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g4c7l"]
@@ -416,11 +418,11 @@ animation = &"roll_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_uw77l"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_s7qer")
-blend_point_0/pos = Vector2(0, 1)
+blend_point_0/pos = Vector2(0, -1)
 blend_point_1/node = SubResource("AnimationNodeAnimation_g4c7l")
 blend_point_1/pos = Vector2(0.90000004, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_knn7v")
-blend_point_2/pos = Vector2(0, -1)
+blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_7pqkx")
 blend_point_3/pos = Vector2(-0.90000004, 0)
 blend_mode = 1
@@ -449,7 +451,7 @@ states/RollState/node = SubResource("AnimationNodeBlendSpace2D_uw77l")
 states/RollState/position = Vector2(442, -18)
 states/Start/position = Vector2(162, 100)
 transitions = ["Start", "MoveState", SubResource("AnimationNodeStateMachineTransition_knn7v"), "RollState", "MoveState", SubResource("AnimationNodeStateMachineTransition_rkbax"), "AttackState", "MoveState", SubResource("AnimationNodeStateMachineTransition_g1dw6"), "MoveState", "RollState", SubResource("AnimationNodeStateMachineTransition_yw30f"), "MoveState", "AttackState", SubResource("AnimationNodeStateMachineTransition_qjkh3")]
-graph_offset = Vector2(-210, -129)
+graph_offset = Vector2(-258, 31)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_uw77l"]
 nodes/output/position = Vector2(320, 120)
@@ -475,6 +477,6 @@ tree_root = SubResource("AnimationNodeBlendTree_uw77l")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/StateMachine/AttackState/blend_position = Vector2(-0.09201521, -0.52735233)
-parameters/StateMachine/MoveState/RunState/blend_position = Vector2(0.21064639, -0.23829782)
-parameters/StateMachine/MoveState/StandState/blend_position = Vector2(0.0038022995, -0.5798687)
+parameters/StateMachine/MoveState/RunState/blend_position = Vector2(-0.1919927, 0.3183856)
+parameters/StateMachine/MoveState/StandState/blend_position = Vector2(0.17197454, 0.1748879)
 parameters/StateMachine/RollState/blend_position = Vector2(-0.74600756, 0.013698578)

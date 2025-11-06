@@ -3,8 +3,8 @@ extends CharacterBody2D
 const SPEED = 100.0
 const ROLL_SPEED = 125.0
 
-var input_vector = Vector2.ZERO
-var last_input_vector = Vector2.ZERO
+var input_vector := Vector2.ZERO
+var last_input_vector := Vector2.ZERO
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/StateMachine/playback")
@@ -16,15 +16,14 @@ func _physics_process(delta: float) -> void:
 		"AttackState": pass
 		"RollState": roll_state(delta)
 
-func roll_state(delta: float) -> void:
+func roll_state(_delta: float) -> void:
 	velocity = last_input_vector * ROLL_SPEED
 	move_and_slide()
-func move_state(delta: float) -> void:
+func move_state(_delta: float) -> void:
 	input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if input_vector != Vector2.ZERO:
 		last_input_vector = input_vector
-		var direction_vector: = Vector2(input_vector.x, -input_vector.y)
-		update_blend_positions(direction_vector)
+		update_blend_positions(input_vector)
 	if Input.is_action_just_pressed("attack"):
 		playback.travel("AttackState")
 	if Input.is_action_just_pressed("roll"):
