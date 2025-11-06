@@ -11,7 +11,7 @@ var last_input_vector = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	var state = playback.get_current_node()
-	match state:	
+	match state:
 		"MoveState": move_state(delta)
 		"AttackState": pass
 		"RollState": roll_state(delta)
