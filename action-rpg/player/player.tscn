@@ -19,6 +19,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrassArea2D/CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array()]
+}
 
 [sub_resource type="Animation" id="Animation_ebec5"]
 resource_name = "attack_down"
@@ -35,6 +47,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [36, 37, 38, 39]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrassArea2D/CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(6, -6, 18, -6, 18, -3, 6, -3), PackedVector2Array(-4, 7, -3, 21, 10, 17, 17, 3, 6, 8), PackedVector2Array(-10, 2, -20, 8, -12, 18, 2, 20, 10, 17, 16, 5, 7, 10, -4, 8), PackedVector2Array(-10, -6, -22, -6, -21, 2, -15, 6, -17, 1, -10, -3), PackedVector2Array()]
 }
 
 [sub_resource type="Animation" id="Animation_yllr7"]
@@ -483,7 +507,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_uw77l")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/StateMachine/AttackState/blend_position = Vector2(-0.09201521, -0.52735233)
+parameters/StateMachine/AttackState/blend_position = Vector2(0.0032680035, 0.8227848)
 parameters/StateMachine/MoveState/RunState/blend_position = Vector2(-0.1919927, 0.3183856)
 parameters/StateMachine/MoveState/StandState/blend_position = Vector2(-0.01000911, 0.72197306)
 parameters/StateMachine/RollState/blend_position = Vector2(-0.74600756, 0.013698578)
@@ -496,3 +520,7 @@ position_smoothing_enabled = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, -9)
 polygon = PackedVector2Array(0, 0, 5, 6, 0, 13, -5, 6)
+
+[node name="GrassArea2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GrassArea2D"]
